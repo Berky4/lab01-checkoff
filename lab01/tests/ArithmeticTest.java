@@ -7,26 +7,32 @@ public class ArithmeticTest {
 
     @Test
     public void testAdd() {
-        assertEquals(5, arithmetic.add(2, 3));
-        assertEquals(-1, arithmetic.add(2, -3));
+        assertEquals(11, arithmetic.add(5, 6));
+        assertEquals(-1, arithmetic.add(5, -6));
+        assertEquals(-6, arithmetic.add(0, -6));
+        assertEquals(0, arithmetic.add(6, -6));
     }
 
     @Test
     public void testSubtract() {
-        assertEquals(-1, arithmetic.subtract(2, 3));
-        assertEquals(5, arithmetic.subtract(8, 3));
+        assertEquals(-1, arithmetic.subtract(5, 6));
+        assertEquals(11, arithmetic.subtract(17, 6));
+        assertEquals(-6, arithmetic.subtract(0, 6));
+        assertEquals(12, arithmetic.subtract(18, 6));
     }
 
     @Test
     public void testMultiply() {
-        assertEquals(6, arithmetic.multiply(2, 3));
-        assertEquals(-15, arithmetic.multiply(5, -3));
+        assertEquals(30, arithmetic.multiply(5, 6));
+        assertEquals(-30, arithmetic.multiply(5, -6));
+        assertEquals(0, arithmetic.multiply(0, -6));
+        assertEquals(0, arithmetic.multiply(6, 0));
     }
 
     @Test
     public void testDivide() {
         assertEquals(2.5, arithmetic.divide(5, 2), 0.0001);
-        assertEquals(-3.0, arithmetic.divide(9, -3), 0.0001);
+        assertEquals(-2.5, arithmetic.divide(-5, 2), 0.0001);
         
         // Test division by zero should throw IllegalArgumentException
         try {
